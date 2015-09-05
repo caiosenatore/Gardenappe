@@ -1,0 +1,9 @@
+h3 Thank you!
+hr
+p Congrats! Now you're a member.
+p Check your e-mail for further informations.
+
+- if Rails.env.development?
+  .alert.alert-warning
+    p Because you are at development enviroment
+    a href=(@token_url_auth) click here to authenticate

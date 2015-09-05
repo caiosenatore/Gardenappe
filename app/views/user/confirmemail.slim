@@ -1,0 +1,12 @@
+h3 Confirm e-mail
+hr
+div class=(!@email_confirmed ? 'alert alert-danger' : 'alert alert-success')
+  - if @email_confirmed
+    p Your e-mail is confirmed! Thank you!
+  - else
+    p Something wrong happened, we strongly advice you to generate other code at login page.
+  p You'll be redirect to login page
+javascript:
+  setTimeout(function () {
+    window.location.href = '/login'
+  }, 3000);
