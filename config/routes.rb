@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -7,6 +9,10 @@ Rails.application.routes.draw do
 
   # Define user scope
   scope :backstage do
+    resources :dashboard do
+      get :index
+    end
+
     resources :user do
       get :thankyou
       get :confirmemail
@@ -14,7 +20,6 @@ Rails.application.routes.draw do
       collection do
         # Curent_user management
         get :index
-        get :mypassword
         get :myinformation
         get :myphoto
         get :list
