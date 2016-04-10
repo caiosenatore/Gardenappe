@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2021698211">
+    <data-source source="LOCAL" name="PostgreSQL - gardenappe@localhost" uuid="2a35795a-8815-44ad-8e8e-a5d333048465">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/gardenappe</jdbc-url>
+    </data-source>
+  </component>
+</project>

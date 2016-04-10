@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="PostgreSQL - gardenappe@localhost" uuid="2a35795a-8815-44ad-8e8e-a5d333048465">
+    <database-info product="PostgreSQL" version="9.3.5" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.3 JDBC4 (build 1100)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.2">
+      <database id="1" name="postgres"/>
+      <database id="2" name="gardenappe"/>
+      <schema id="3" parent="1" name="public">
+        <object-id>2200</object-id>
+        <comment>standard public schema</comment>
+        <introspection-state-number>1063</introspection-state-number>
+        <introspection-timestamp>2015-11-04.13:10:45.687</introspection-timestamp>
+      </schema>
+      <schema id="4" parent="2" name="public">
+        <object-id>2200</object-id>
+        <comment>standard public schema</comment>
+        <introspection-state-number>2330</introspection-state-number>
+        <introspection-timestamp>2015-11-04.13:11:26.786</introspection-timestamp>
+      </schema>
+      <sequence id="5" parent="3" name="admins_id_seq">
+        <object-id>16402</object-id>
+        <state-number>1002</state-number>
+      </sequence>
+      <sequence id="6" parent="3" name="cities_id_seq">
+        <object-id>16407</object-id>
+        <state-number>1005</state-number>
+      </sequence>
+      <sequence id="7" parent="3" name="contacts_id_seq">
+        <object-id>16415</object-id>
+        <state-number>1008</state-number>
+      </sequence>
+      <sequence id="8" parent="3" name="likes_id_seq">
+        <object-id>16420</object-id>
+        <state-number>1011</state-number>
+      </sequence>
+      <sequence id="9" parent="3" name="searches_id_seq">
+        <object-id>16428</object-id>
+        <state-number>1015</state-number>
+      </sequence>
+      <sequence id="10" parent="3" name="serviceproviders_id_seq">
+        <object-id>16439</object-id>
+        <state-number>1018</state-number>
+      </sequence>
+      <sequence id="11" parent="3" name="services_id_seq">
+        <object-id>16447</object-id>
+        <state-number>1021</state-number>
+      </sequence>
+      <sequence id="12" parent="3" name="states_id_seq">
+        <object-id>16455</object-id>
+        <state-number>1024</state-number>
+      </sequence>
+      <table id="13" parent="3" name="admins">
+        <object-id>16393</object-id>
+        <state-number>1001</state-number>
+      </table>
+      <table id="14" parent="3" name="cities">
+        <object-id>16404</object-id>
+        <state-number>1004</state-number>
+      </table>
+      <table id="15" parent="3" name="contacts">
+        <object-id>16409</object-id>
+        <state-number>1007</state-number>
+      </table>
+      <table id="16" parent="3" name="country">
+        <object-id>16495</object-id>
+        <state-number>1062</state-number>
+      </table>
+      <table id="17" parent="3" name="likes">
+        <object-id>16417</object-id>
+        <state-number>1010</state-number>
+      </table>
+      <table id="18" parent="3" name="schema_migrations">
+        <object-id>16422</object-id>
+        <state-number>1013</state-number>
+      </table>
+      <table id="19" parent="3" name="searches">
+        <object-id>16425</object-id>
+        <state-number>1014</state-number>
+      </table>
+      <table id="20" parent="3" name="serviceproviders">
+        <object-id>16430</object-id>
+        <state-number>1017</state-number>
+      </table>
+      <table id="21" parent="3" name="services">
+        <object-id>16441</object-id>
+        <state-number>1020</state-number>
+      </table>
+      <table id="22" parent="3" name="states">
+        <object-id>16449</object-id>
+        <state-number>1023</state-number>
+      </table>
+      <sequence id="23" parent="4" name="users_id_seq">
+        <object-id>26903</object-id>
+        <state-number>2324</state-number>
+      </sequence>
+      <table id="24" parent="4" name="schema_migrations">
+        <object-id>26922</object-id>
+        <state-number>2329</state-number>
+      </table>
+      <table id="25" parent="4" name="users">
+        <object-id>26905</object-id>
+        <state-number>2324</state-number>
+      </table>
+      <column id="26" parent="13" name="id">
+        <state-number>1026</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;admins_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="27" parent="13" name="email">
+        <state-number>1001</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;&apos;::character varying</default-expression>
+      </column>
+      <column id="28" parent="13" name="encrypted_password">
+        <state-number>1001</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;&apos;::character varying</default-expression>
+      </column>
+      <column id="29" parent="13" name="reset_password_token">
+        <state-number>1001</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="30" parent="13" name="reset_password_sent_at">
+        <state-number>1001</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="31" parent="13" name="remember_created_at">
+        <state-number>1001</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="32" parent="13" name="sign_in_count">
+        <state-number>1001</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>0</default-expression>
+      </column>
+      <column id="33" parent="13" name="current_sign_in_at">
+        <state-number>1001</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="34" parent="13" name="last_sign_in_at">
+        <state-number>1001</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="35" parent="13" name="current_sign_in_ip">
+        <state-number>1001</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="36" parent="13" name="last_sign_in_ip">
+        <state-number>1001</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="37" parent="13" name="created_at">
+        <state-number>1001</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="38" parent="13" name="updated_at">
+        <state-number>1001</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="39" parent="13" name="admins_pkey">
+        <object-id>16466</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <index id="40" parent="13" name="index_admins_on_email">
+        <object-id>16482</object-id>
+        <columns>email</columns>
+        <unique>1</unique>
+      </index>
+      <index id="41" parent="13" name="index_admins_on_reset_password_token">
+        <object-id>16483</object-id>
+        <columns>reset_password_token</columns>
+        <unique>1</unique>
+      </index>
+      <key id="42" parent="13" name="admins_pkey">
+        <columns>id</columns>
+        <underlying-index>admins_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="43" parent="14" name="id">
+        <state-number>1027</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;cities_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="44" parent="14" name="name">
+        <state-number>1004</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="45" parent="14" name="created_at">
+        <state-number>1004</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="46" parent="14" name="updated_at">
+        <state-number>1004</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="47" parent="14" name="state_id">
+        <state-number>1004</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <index id="48" parent="14" name="cities_pkey">
+        <object-id>16468</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <key id="49" parent="14" name="cities_pkey">
+        <columns>id</columns>
+        <underlying-index>cities_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="50" parent="15" name="id">
+        <state-number>1028</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;contacts_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="51" parent="15" name="name">
+        <state-number>1007</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="52" parent="15" name="email">
+        <state-number>1007</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="53" parent="15" name="phone">
+        <state-number>1007</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="54" parent="15" name="message">
+        <state-number>1007</state-number>
+        <data-type>text</data-type>
+      </column>
+      <column id="55" parent="15" name="service_id">
+        <state-number>1007</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="56" parent="15" name="created_at">
+        <state-number>1007</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="57" parent="15" name="updated_at">
+        <state-number>1007</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="58" parent="15" name="contacts_pkey">
+        <object-id>16470</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <key id="59" parent="15" name="contacts_pkey">
+        <columns>id</columns>
+        <underlying-index>contacts_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="60" parent="16" name="id">
+        <state-number>1063</state-number>
+        <mandatory>1</mandatory>
+        <data-type>char(3)</data-type>
+      </column>
+      <column id="61" parent="16" name="name">
+        <state-number>1060</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="62" parent="16" name="tb_country_pkey">
+        <object-id>16498</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <index id="63" parent="16" name="unique_code">
+        <object-id>16500</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <key id="64" parent="16" name="tb_country_pkey">
+        <columns>id</columns>
+        <underlying-index>tb_country_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <key id="65" parent="16" name="unique_code">
+        <columns>id</columns>
+        <underlying-index>unique_code</underlying-index>
+      </key>
+      <column id="66" parent="17" name="id">
+        <state-number>1029</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;likes_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="67" parent="17" name="serviceprovider_id">
+        <state-number>1010</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="68" parent="17" name="service_id">
+        <state-number>1010</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="69" parent="17" name="created_at">
+        <state-number>1010</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="70" parent="17" name="updated_at">
+        <state-number>1010</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="71" parent="17" name="likes_pkey">
+        <object-id>16472</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <key id="72" parent="17" name="likes_pkey">
+        <columns>id</columns>
+        <underlying-index>likes_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="73" parent="18" name="version">
+        <state-number>1013</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="74" parent="18" name="unique_schema_migrations">
+        <object-id>16486</object-id>
+        <columns>version</columns>
+        <unique>1</unique>
+      </index>
+      <column id="75" parent="19" name="id">
+        <state-number>1030</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;searches_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="76" parent="19" name="term">
+        <state-number>1014</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="77" parent="19" name="created_at">
+        <state-number>1014</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="78" parent="19" name="updated_at">
+        <state-number>1014</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="79" parent="19" name="searches_pkey">
+        <object-id>16474</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <key id="80" parent="19" name="searches_pkey">
+        <columns>id</columns>
+        <underlying-index>searches_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="81" parent="20" name="id">
+        <state-number>1031</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;serviceproviders_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="82" parent="20" name="email">
+        <state-number>1017</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;&apos;::character varying</default-expression>
+      </column>
+      <column id="83" parent="20" name="encrypted_password">
+        <state-number>1017</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;&apos;::character varying</default-expression>
+      </column>
+      <column id="84" parent="20" name="reset_password_token">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="85" parent="20" name="reset_password_sent_at">
+        <state-number>1017</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="86" parent="20" name="remember_created_at">
+        <state-number>1017</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="87" parent="20" name="sign_in_count">
+        <state-number>1017</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>0</default-expression>
+      </column>
+      <column id="88" parent="20" name="current_sign_in_at">
+        <state-number>1017</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="89" parent="20" name="last_sign_in_at">
+        <state-number>1017</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="90" parent="20" name="current_sign_in_ip">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="91" parent="20" name="last_sign_in_ip">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="92" parent="20" name="confirmation_token">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="93" parent="20" name="confirmed_at">
+        <state-number>1017</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="94" parent="20" name="confirmation_sent_at">
+        <state-number>1017</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="95" parent="20" name="unconfirmed_email">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="96" parent="20" name="name">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="97" parent="20" name="phone">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="98" parent="20" name="document">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="99" parent="20" name="postal_code">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="100" parent="20" name="street">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="101" parent="20" name="number">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="102" parent="20" name="neighborhood">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="103" parent="20" name="complement">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="104" parent="20" name="address">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="105" parent="20" name="state_id">
+        <state-number>1017</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="106" parent="20" name="city_id">
+        <state-number>1017</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="107" parent="20" name="uid">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="108" parent="20" name="logo_file_name">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="109" parent="20" name="logo_content_type">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="110" parent="20" name="logo_file_size">
+        <state-number>1017</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="111" parent="20" name="logo_updated_at">
+        <state-number>1017</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="112" parent="20" name="created_at">
+        <state-number>1017</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="113" parent="20" name="updated_at">
+        <state-number>1017</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="114" parent="20" name="provider">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="115" parent="20" name="role">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="116" parent="20" name="file">
+        <state-number>1017</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="117" parent="20" name="serviceproviders_pkey">
+        <object-id>16476</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <index id="118" parent="20" name="index_serviceproviders_on_email">
+        <object-id>16484</object-id>
+        <columns>email</columns>
+        <unique>1</unique>
+      </index>
+      <index id="119" parent="20" name="index_serviceproviders_on_reset_password_token">
+        <object-id>16485</object-id>
+        <columns>reset_password_token</columns>
+        <unique>1</unique>
+      </index>
+      <key id="120" parent="20" name="serviceproviders_pkey">
+        <columns>id</columns>
+        <underlying-index>serviceproviders_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="121" parent="21" name="id">
+        <state-number>1032</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;services_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="122" parent="21" name="title">
+        <state-number>1020</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="123" parent="21" name="serviceprovider_id">
+        <state-number>1020</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="124" parent="21" name="created_at">
+        <state-number>1020</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="125" parent="21" name="updated_at">
+        <state-number>1020</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="126" parent="21" name="description">
+        <state-number>1020</state-number>
+        <data-type>text</data-type>
+      </column>
+      <index id="127" parent="21" name="services_pkey">
+        <object-id>16478</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <key id="128" parent="21" name="services_pkey">
+        <columns>id</columns>
+        <underlying-index>services_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="129" parent="22" name="id">
+        <state-number>1033</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;states_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="130" parent="22" name="name">
+        <state-number>1023</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="131" parent="22" name="acronym">
+        <state-number>1023</state-number>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="132" parent="22" name="created_at">
+        <state-number>1023</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="133" parent="22" name="updated_at">
+        <state-number>1023</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="134" parent="22" name="states_pkey">
+        <object-id>16480</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <key id="135" parent="22" name="states_pkey">
+        <columns>id</columns>
+        <underlying-index>states_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="136" parent="24" name="version">
+        <state-number>2329</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <index id="137" parent="24" name="unique_schema_migrations">
+        <object-id>26928</object-id>
+        <columns>version</columns>
+        <unique>1</unique>
+      </index>
+      <column id="138" parent="25" name="id">
+        <state-number>2324</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;users_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="139" parent="25" name="email">
+        <state-number>2324</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="140" parent="25" name="password_digest">
+        <state-number>2324</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="141" parent="25" name="fullname">
+        <state-number>2324</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(130)</data-type>
+      </column>
+      <column id="142" parent="25" name="facebook">
+        <state-number>2324</state-number>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="143" parent="25" name="email_token">
+        <state-number>2324</state-number>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="144" parent="25" name="is_an_administrator">
+        <state-number>2324</state-number>
+        <data-type>boolean</data-type>
+        <default-expression>false</default-expression>
+      </column>
+      <column id="145" parent="25" name="activated">
+        <state-number>2324</state-number>
+        <data-type>boolean</data-type>
+        <default-expression>true</default-expression>
+      </column>
+      <column id="146" parent="25" name="created_at">
+        <state-number>2324</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="147" parent="25" name="updated_at">
+        <state-number>2324</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="148" parent="25" name="email_token_created_at">
+        <state-number>2324</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;2015-09-13 22:26:03&apos;::timestamp without time zone</default-expression>
+      </column>
+      <column id="149" parent="25" name="email_token_valid">
+        <state-number>2324</state-number>
+        <mandatory>1</mandatory>
+        <data-type>boolean</data-type>
+        <default-expression>false</default-expression>
+      </column>
+      <column id="150" parent="25" name="photo_file_name">
+        <state-number>2324</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="151" parent="25" name="photo_content_type">
+        <state-number>2324</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="152" parent="25" name="photo_file_size">
+        <state-number>2324</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="153" parent="25" name="photo_updated_at">
+        <state-number>2324</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="154" parent="25" name="users_pkey">
+        <object-id>26916</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <index id="155" parent="25" name="index_users_on_email">
+        <object-id>26919</object-id>
+        <columns>email</columns>
+        <unique>1</unique>
+      </index>
+      <index id="156" parent="25" name="index_users_on_activated">
+        <object-id>26918</object-id>
+        <columns>activated</columns>
+      </index>
+      <index id="157" parent="25" name="index_users_on_email_token_created_at">
+        <object-id>26920</object-id>
+        <columns>email_token_created_at</columns>
+      </index>
+      <index id="158" parent="25" name="index_users_on_email_token_valid">
+        <object-id>26921</object-id>
+        <columns>email_token_valid</columns>
+      </index>
+      <key id="159" parent="25" name="users_pkey">
+        <columns>id</columns>
+        <underlying-index>users_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

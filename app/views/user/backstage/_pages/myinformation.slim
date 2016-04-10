@@ -1,0 +1,15 @@
+== render 'layouts/backstage/navbar'
+== render 'user/backstage/_wparts/cover_head'
+h3 Change my information
+hr
+.row
+  .col-xs-8
+    == render 'user/backstage/_forms/form_change_my_information'
+  .col-xs-4
+    .well
+      p Attention!
+      |If you change your e-mail address we're going to send you a confirmation message again,
+      |and you'll be disconnect to the website until you validate yout address again!
+      br
+      br
+      |Also for security reasons, for changing your password you'll be disconnected and forced to log in again!

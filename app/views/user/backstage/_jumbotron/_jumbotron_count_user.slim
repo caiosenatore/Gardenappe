@@ -1,0 +1,9 @@
+.jumbotron
+  h1 id='singleusercount'
+  p active users in your database
+  p
+    a href='#{list_user_index_path}' class='btn btn-primary btn-lg' role='button' Manage
+javascript:
+  singles('#{singlecountusers_user_index_path}', function(data){
+    $('#singleusercount').html(data)
+  })

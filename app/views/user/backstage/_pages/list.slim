@@ -1,0 +1,30 @@
+== render 'layouts/backstage/navbar'
+h3 Manage Users
+hr
+.row
+  .col-md-1
+    button id="new_user" class='btn btn-primary btn-sm' aria-label="Left Align"
+      span class='glyphicon glyphicon-plus' aria-hidden="true"
+      |&nbsp;Add new
+  .col-md-6
+    == form_tag list_user_index_path, :method => 'get', :id => 'form_search' do
+      .input-group
+        span class="input-group-addon" Search
+        == text_field_tag :search, params[:search], :class => "form-control input-sm", :style => "width: 250px", :placeholder => "for something..."
+        |&nbsp;
+        button class='btn btn-default btn-sm' aria-label="Left Align"
+          span class='glyphicon glyphicon-search' aria-hidden="true"
+          |&nbsp;
+        |&nbsp;
+        button id="clear_search" class='btn btn-default btn-sm #{"hidden" unless (@search != "" && !@search.nil?)}' aria-label="Left Align"
+          span class='glyphicon glyphicon-erase' aria-hidden="true"
+          |&nbsp;Clear search
+br
+== render 'user/backstage/_wparts/list_all_users'
+
+javascript:
+  $("#clear_search").click(function(){
+    $("#clear_search").hide()
+      $("#search").val("")
+      $("#form_search").submit()
+  })

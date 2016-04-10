@@ -1,0 +1,45 @@
+- if @users.count > 0
+  table class='table'
+    thead
+      tr
+        th width="5%"
+        th width="30%" Fullname
+        th width="60%" E-mail
+        th width="5%" Actions
+    tbody
+      - @users.each do |u|
+        tr
+          td
+            == image_tag u.photo.url(:thumb), :width => 35
+          td
+            h5
+              == u.fullname
+              |&nbsp;
+              - if !u.activated
+                  span class='label label-danger' style="margin-right: 3px"
+                    |Inactivated
+              - if !u.email_token_valid
+                  span class='label label-danger' style="margin-right: 3px"
+                    |E-mail not confirmed
+              - if u.is_an_administrator
+                  span class='label label-info' style="margin-right: 3px"
+                    |Is an administrator
+          td
+            h5
+              span class='glyphicon glyphicon-envelope' aria-hidden="true"
+              |&nbsp;
+              a href="mailto:#{u.email}" style="color: #000000"
+                == u.email
+          td align="right"
+            button class='btn btn-default btn-sm' aria-label="Left Align" onclick="edit_user(#{u.id})"
+              span class='glyphicon glyphicon-pencil' aria-hidden="true"
+              |&nbsp;Edit
+  == will_paginate @users, renderer: BootstrapPagination::Rails
+- else
+  .well
+    | No results, try again
+
+javascript:
+  function edit_user(id){
+    redirect_to('/user/' + id)
+  }

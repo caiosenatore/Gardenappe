@@ -1,0 +1,6 @@
+== render 'layouts/backstage/navbar'
+.row
+  .col-md-2
+    == image_tag current_user.photo.url(:medium), :width => 150, :height => 150, :class => 'img-circle'
+  .col-md-10
+    == render 'user/_forms/form_update_user'

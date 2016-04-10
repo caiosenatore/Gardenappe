@@ -1,0 +1,22 @@
+== form_for :user, :url => updatecurrentuser_user_index_path, :html => {:id => 'form_user_change_my_information'} do |f|
+  .form-group id="email"
+    == f.label :email
+    == f.text_field :email, class: 'form-control', :autofocus => true
+  .form-group id="fullname"
+    == f.label :fullname
+    == f.text_field :fullname, class: 'form-control'
+
+  p You can also change the password.
+  .form-group id="password"
+    == f.password_field :password, class: 'form-control', :placeholder => :password
+  .form-group id="password_confirmation"
+    == f.password_field :password_confirmation, :class => 'form-control', :placeholder => :password_confirmation
+  == f.submit 'Change my information', class: 'btn btn-primary'
+javascript:
+  ajax_callback($('#form_user_change_my_information'), function (data) {
+    if (data.redirect_to_login) {
+      redirect_to('#{login_user_index_path}')
+    } else {
+      redirect_to('#{user_index_path}')
+    }
+  })
