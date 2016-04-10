@@ -1,0 +1,9 @@
+.row
+  .col-xs-2
+    == image_tag current_user.photo.url(:medium), :width => 150, :height => 150, :class => 'img-circle'
+  .col-md-10
+    .container
+      h3 #{current_user.fullname}
+      p #{current_user.email}
+      // User nav
+      == render 'user/backstage/_wparts/user_nav'

@@ -1,0 +1,14 @@
+== form_for :user, :url => {:action => "create"}, :html => {:id => 'form_user_create'} do |f|
+  .form-group id="email"
+    == f.text_field :email, class: 'form-control', :autofocus => true, :placeholder => :email
+  .form-group id="fullname"
+    == f.text_field :fullname, class: 'form-control', :placeholder => :fullname
+  .form-group id="password"
+    == f.password_field :password, class: 'form-control', :placeholder => :password
+  .form-group id="password_confirmation"
+    == f.password_field :password_confirmation, :class => 'form-control', :placeholder => :password_confirmation
+  == f.submit 'Create my account', class: 'btn btn-primary'
+javascript:
+  ajax_callback($('#form_user_create'), function(data){
+    redirect_to(data.thankyouurl)
+  })

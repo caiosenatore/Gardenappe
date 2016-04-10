@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.Jcrop
+//= require jquery-fileupload/basic
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require bootstrap-filestyle
 //= require_tree .

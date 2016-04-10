@@ -1,3 +1,4 @@
+== render 'layouts/backstage/logo'
 h3 Confirm e-mail
 hr
 div class=(!@email_confirmed ? 'alert alert-danger' : 'alert alert-success')
@@ -8,5 +9,5 @@ div class=(!@email_confirmed ? 'alert alert-danger' : 'alert alert-success')
   p You'll be redirect to login page
 javascript:
   setTimeout(function () {
-    window.location.href = '/login'
+    window.location.href = '#{login_user_index_path}'
   }, 3000);

@@ -1,0 +1,88 @@
+== form_for :user, :url => updatecurrentuser_user_index_path, :html => {:id => 'form_user_photo', multipart: true, :target => 'process_upload'} do |f|
+  .form-group
+    h5 Step 1 - Select a photo
+    == f.file_field :photo, :onchange => 'readURL(this);'
+    == f.hidden_field :crop_w, :id => :crop_w
+    == f.hidden_field :crop_h, :id => :crop_h
+    == f.hidden_field :crop_x, :id => :crop_x
+    == f.hidden_field :crop_y, :id => :crop_y
+  form-group id="step2and3"
+    h5 Step 2 - Crop your image
+    .row
+      .col-md-8
+        img id="target" src="#" width="100%"
+      .col-md-4
+        div id="preview-pane" class="img-circle"
+          img id="preview-pane" src="#"
+        br
+        .form-group
+          == f.submit 'Step 3 - Save my photo', :class => 'btn btn-primary'
+        .form-group
+          button id="reload" class="btn btn-warning" onclick="location.reload();return false;"
+            |I didn't like it!
+          iframe id='process_upload' onload='upload_income()'
+javascript:
+  $(function () {
+    $('#step2and3').hide(); // Hide other steps
+  })
+
+  function upload_income(){
+    alert($('#process_upload').attr('src'))
+  }
+
+  $preview = $('#preview-pane')
+  $pcnt = $('#preview-pane')
+  $pimg = $('#preview-pane img')
+  $target = $('#target')
+
+  xsize = $pcnt.width()
+  ysize = $pcnt.height()
+
+  function updatePreview(c) {
+    if (parseInt(c.w) > 0) {
+      var rx = xsize / c.w;
+      var ry = ysize / c.h;
+
+      $crop_w = Math.round(rx * $target.outerWidth())
+      $crop_h = Math.round(ry * $target.outerHeight())
+      $crop_x = -Math.round(rx * c.x)
+      $crop_y = -Math.round(ry * c.y)
+
+      $('#crop_w').val($crop_w)
+      $('#crop_h').val($crop_h)
+      $('#crop_x').val($crop_x)
+      $('#crop_y').val($crop_y)
+
+      $pimg.css({
+        width: $crop_w + 'px',
+        height: $crop_h + 'px',
+        marginLeft: $crop_x + 'px',
+        marginTop: $crop_y + 'px'
+      });
+    }
+  }
+
+  $target.load(function () {
+    $target.Jcrop({
+      minSize: [xsize, ysize],
+      onChange: updatePreview,
+      onSelect: updatePreview,
+      setSelect: [10, 10, 150, 150],
+      aspectRatio: 1
+    });
+
+    $pimg.attr('src', $('#target').attr('src'))
+  })
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      $('#step2and3').show();
+
+      var reader = new FileReader();
+      reader.readAsDataURL(input.files[0]);
+
+      reader.onload = function (e) {
+        $target.attr('src', e.target.result);
+      }
+    }
+  }

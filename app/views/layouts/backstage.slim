@@ -1,0 +1,9 @@
+html
+  head
+    title Gardenappe Backstage
+    == stylesheet_link_tag 'backstage', media: 'all', 'data-turbolinks-track' => true
+    == javascript_include_tag 'backstage', 'data-turbolinks-track' => true
+    == csrf_meta_tags
+  .container
+    == render '/layouts/_default/modal'
+    == yield

@@ -6,59 +6,28 @@ Rails.application.routes.draw do
   root 'user#login'
 
   # Define user scope
-  resources :user do
-    get :thankyou
-    get :confirmemail
+  scope :backstage do
+    resources :user do
+      get :thankyou
+      get :confirmemail
+
+      collection do
+        # Curent_user management
+        get :index
+        get :mypassword
+        get :myinformation
+        get :myphoto
+        get :list
+        post :updatecurrentuser
+
+        # Authenticate routes
+        get :login
+        get :logout
+        post :authenticate
+
+        # Singles
+        get :singlecountusers
+      end
+    end
   end
-
-  get :login, to: 'user#login'
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end

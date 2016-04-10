@@ -1,0 +1,11 @@
+== render 'layouts/backstage/logo'
+h3 Welcome to Gardenappe Backstage
+hr
+.row
+  .col-xs-6
+    h4 Request a new backstage user
+    == render 'user/backstage/_forms/form_create_user'
+  .col-xs-6
+    h4 Access with your existing backstage account
+    .well
+      == render 'user/backstage/_forms/form_login'

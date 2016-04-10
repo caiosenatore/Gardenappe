@@ -1,0 +1,25 @@
+.modal.fade id="modal_validation"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+        h4 class="modal-title" Ops! Check your data
+      .modal-body
+        p We found some errors trying to validate a sent data:
+        div id="modal_validation_messages"
+      .modal-footer
+        button type="button" class="btn btn-danger" data-dismiss="modal" Ok, got it!
+
+.modal.fade id="modal_message"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+        h4 class="modal-title"
+          h4 class="modal-title" Ops! Something happened
+      .modal-body
+        div id="modal_validation_messages"
+      .modal-footer
+        button type="button" class="btn btn-primary" data-dismiss="modal" Ok, got it!

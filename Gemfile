@@ -16,6 +16,9 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem "jquery-fileupload-rails"
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -25,12 +28,21 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-filestyle-rails'
+
+# Paginate
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 
 # Use HTML Slim
 gem 'slim'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+# Use image (upload and crop)
+gem 'jcrop-rails-v2'
+gem "paperclip", "~> 4.3"
 
 # Use Unicorn as the app server
 # gem 'unicorn'
